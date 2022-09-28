@@ -8,14 +8,14 @@ from torch.utils.data import DataLoader
 
 import voc12.dataloader
 from misc import torchutils, imutils
-
+from tqdm import tqdm
 
 def _work(process_id, infer_dataset, args):
 
     databin = infer_dataset[process_id]
     infer_data_loader = DataLoader(databin, shuffle=False, num_workers=0, pin_memory=False)
 
-    for iter, pack in enumerate(infer_data_loader):
+    for iter, pack in enumerate(tqdm(infer_data_loader)):
         img_name = voc12.dataloader.decode_int_filename(pack['name'][0])
         img = pack['img'][0].numpy()
         cam_dict = np.load(os.path.join(args.cam_out_dir, img_name + '.npy'), allow_pickle=True).item()
