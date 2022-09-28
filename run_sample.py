@@ -75,7 +75,7 @@ if __name__ == '__main__':
     parser.add_argument("--amn_weights_name", default="sess/res50_amn.pth", type=str)
     parser.add_argument("--irn_weights_name", default="sess/res50_irn.pth", type=str)
 
-    parser.add_argument("--cam_out_dir", default="result/cam", type=str)
+    parser.add_argument("--cam_out_dir", default="result/cg_cam", type=str)
     parser.add_argument("--ir_label_out_dir", default="result/ir_label", type=str)
     parser.add_argument("--amn_cam_out_dir", default="result/amn_cam", type=str)
     parser.add_argument("--amn_ir_label_out_dir", default="result/amn_ir_label", type=str)
